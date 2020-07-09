@@ -1,28 +1,42 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <navlink/>
+    <router-view></router-view>
+    <!-- <AddExpense/>
+    <ShowExpense/>     -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// import AddExpense from './components/AddExpense.vue'            //No need to use these After using routing
+// import ShowExpense from './components/ShowExpense.vue'
+import navlink from './components/navlink.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    // AddExpense,
+    // ShowExpense
+    navlink
+  },
+  computed:{
+    data(){ 
+      return this.$store.data;
+    }
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+body{
+  font-family: Arial, Helvetica, sans-seriff;
+  line-height: 1.4;
+  background: #FFF8B1;
+}
+
 </style>
